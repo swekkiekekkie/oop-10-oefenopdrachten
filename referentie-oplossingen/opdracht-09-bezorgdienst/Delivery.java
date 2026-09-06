@@ -43,6 +43,15 @@ public class Delivery {
         return price;
     }
 
+    // Alias: getTotalPrice / getPrice voor PDF-stijl
+    public double getTotalPrice() {
+        return calculatePrice();
+    }
+
+    public double getPrice() {
+        return calculatePrice();
+    }
+
     // Delegeert aan Address voor volledige adresregel
     public String getDeliveryAddress() {
         // EDGE CASE: Geen adres gekoppeld

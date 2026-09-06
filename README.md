@@ -17,9 +17,8 @@ java Main
 ```
 ├── README.md                          # Dit bestand
 ├── docs/
-│   └── superpowers/
-│       └── specs/
-│           └── 2026-09-06-java-oop-reference-solutions-design.md
+│   ├── oop-opdrachten.pdf             # De 10 oefeningen (PDF)
+│   └── oop-filosofie-verantwoordelijkheid.pdf  # Verantwoordelijkheidsfilosofie (PDF)
 └── referentie-oplossingen/
     ├── README.md                      # Uitgebreide documentatie
     ├── opdracht-01-bioscoop/
@@ -33,6 +32,12 @@ java Main
     ├── opdracht-09-bezorgdienst/
     └── opdracht-10-pretpark/
 ```
+
+## Documentatie
+
+De volgende PDF-bestanden horen in de `docs/` map:
+- **oop-opdrachten.pdf** — De 10 oefeningen met skeletons en requirements
+- **oop-filosofie-verantwoordelijkheid.pdf** — De filosofie achter verantwoordelijkheid en delegatie
 
 ## Opdrachten overzicht
 
@@ -90,7 +95,7 @@ Speciale situaties zijn gemarkeerd met:
 Elke opdracht bevat:
 - Java-bronbestanden (één public class per bestand)
 - `Main.java` met demo (geen Scanner/user input)
-- `VERANTWOORDELIJKHEID.md` met:
+- `UITLEG.md` met:
   - Verantwoordelijkheidstabellen per klasse
   - Delegatieketens
   - Mermaid klassendiagram

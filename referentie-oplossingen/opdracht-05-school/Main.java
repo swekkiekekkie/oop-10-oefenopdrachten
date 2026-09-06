@@ -36,6 +36,15 @@ public class Main {
         System.out.println("Grade bepaalt zelf of het voldoende is: " + testGrade.isPassing());
         System.out.println("Grade vraagt vaknaam aan Course: " + testGrade.getCourseName());
         System.out.println();
+        
+        // Demonstreer hasPassingGrade (PDF-vereiste)
+        System.out.println("--- Heeft student voldoende voor cijfer? ---");
+        Grade passingGrade = alice.getGrades().get(0);  // 7.5 Programmeren
+        Grade failingGrade = alice.getGrades().get(3);  // 5.0 Wiskunde
+        System.out.println("Student.hasPassingGrade() delegeert aan Grade.isPassing():");
+        System.out.println("  alice.hasPassingGrade(7.5 Programmeren): " + alice.hasPassingGrade(passingGrade));
+        System.out.println("  alice.hasPassingGrade(5.0 Wiskunde): " + alice.hasPassingGrade(failingGrade));
+        System.out.println("  (Student controleert NIET zelf de waarde, Grade bepaalt dit)");
 
         // Rapporten
         school.printStudentReport(alice);

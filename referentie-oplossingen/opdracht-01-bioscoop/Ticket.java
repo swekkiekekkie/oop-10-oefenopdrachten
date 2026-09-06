@@ -1,15 +1,16 @@
 public class Ticket {
-    private String seatNumber;
+    private int seatNumber;
     private boolean used;
     private Movie movie;
 
-    public Ticket(String seatNumber, Movie movie) {
-        this.seatNumber = seatNumber;
+    public Ticket(int seatNumber, Movie movie) {
+        // EDGE CASE: Stoelnummer moet positief zijn
+        this.seatNumber = Math.max(1, seatNumber);
         this.used = false;
         this.movie = movie;
     }
 
-    public String getSeatNumber() {
+    public int getSeatNumber() {
         return seatNumber;
     }
 

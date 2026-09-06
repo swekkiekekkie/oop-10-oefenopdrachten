@@ -31,9 +31,14 @@ public class ShoppingCart {
     public double calculateTotal() {
         double total = 0.0;
         for (ShoppingCartItem item : items) {
-            total += item.calculateLineTotal();
+            total += item.getTotalPrice();
         }
         return total;
+    }
+
+    // Alias: getTotalPrice voor PDF-stijl
+    public double getTotalPrice() {
+        return calculateTotal();
     }
 
     public int getItemCount() {

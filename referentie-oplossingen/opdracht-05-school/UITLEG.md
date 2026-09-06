@@ -26,7 +26,7 @@
 |-----------|--------------|
 | **Weet zelf** | name (naam), studentNumber (studentnummer) |
 | **Kent** | List<Grade> (de cijfers) |
-| **Kan vragen beantwoorden** | Wat is mijn naam? Wat is mijn studentnummer? Wat is mijn gemiddelde? Hoeveel voldoendes/onvoldoendes heb ik? |
+| **Kan vragen beantwoorden** | Wat is mijn naam? Wat is mijn studentnummer? Wat is mijn gemiddelde? Hoeveel voldoendes/onvoldoendes heb ik? Heb ik een voldoende voor een bepaald cijfer? |
 | **Kan taken uitvoeren** | Cijfer toevoegen, gemiddelde berekenen, voldoendes tellen |
 | **Delegeert aan** | Grade voor cijferwaarde en voldoende-check |
 
@@ -43,13 +43,14 @@
 ## Delegatieketens
 
 1. **Is cijfer voldoende?**: Grade bepaalt ZELF of value >= 5.5 (de Student controleert dit NIET)
-2. **Studentgemiddelde berekenen**: Student → vraagt aan elke Grade `getValue()` → berekent gemiddelde
-3. **Voldoendes tellen**: Student → vraagt aan elke Grade `isPassing()` → telt true-waarden
-4. **Schoolgemiddelde berekenen**: School → vraagt aan elke Student `calculateAverage()` → berekent gemiddelde
+2. **Heeft student voldoende voor cijfer?**: Student.hasPassingGrade(grade) → Grade.isPassing()
+3. **Studentgemiddelde berekenen**: Student → vraagt aan elke Grade `getValue()` → berekent gemiddelde
+4. **Voldoendes tellen**: Student → vraagt aan elke Grade `isPassing()` → telt true-waarden
+5. **Schoolgemiddelde berekenen**: School → vraagt aan elke Student `calculateAverage()` → berekent gemiddelde
 
 **Belangrijk**: 
 - Grade is de enige die bepaalt of een cijfer voldoende is (>=5.5)
-- Student vraagt dit aan Grade en telt alleen de resultaten
+- Student vraagt dit aan Grade via hasPassingGrade() en telt alleen de resultaten
 
 ## Klassendiagram
 
@@ -77,6 +78,7 @@ classDiagram
         +getStudentNumber() int
         +getGrades() List~Grade~
         +addGrade(Grade) void
+        +hasPassingGrade(Grade) boolean
         +calculateAverage() double
         +countPassingGrades() int
         +countFailingGrades() int

@@ -24,4 +24,9 @@ public class OrderItem {
         }
         return quantity * dish.getPrice();
     }
+
+    // Alias: getTotalPrice voor PDF-stijl
+    public double getTotalPrice() {
+        return calculateTotal();
+    }
 }

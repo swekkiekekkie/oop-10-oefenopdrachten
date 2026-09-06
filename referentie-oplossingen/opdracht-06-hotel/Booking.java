@@ -37,6 +37,11 @@ public class Booking {
         return nights * room.getPricePerNight();
     }
 
+    // Alias: getTotalPrice voor PDF-stijl
+    public double getTotalPrice() {
+        return calculateTotal();
+    }
+
     // Booking voert zichzelf uit en markeert kamer als bezet
     public boolean execute() {
         // EDGE CASE: Al uitgevoerd

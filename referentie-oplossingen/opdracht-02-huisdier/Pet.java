@@ -1,14 +1,15 @@
 public class Pet {
     private String name;
-    private String species;
     private int age;
+    private double weight;
     private Owner owner;
 
-    public Pet(String name, String species, int age, Owner owner) {
+    public Pet(String name, int age, double weight, Owner owner) {
         this.name = name;
-        this.species = species;
         // EDGE CASE: Leeftijd mag niet negatief zijn
         this.age = Math.max(0, age);
+        // EDGE CASE: Gewicht mag niet negatief zijn
+        this.weight = Math.max(0.0, weight);
         this.owner = owner;
     }
 
@@ -16,12 +17,12 @@ public class Pet {
         return name;
     }
 
-    public String getSpecies() {
-        return species;
-    }
-
     public int getAge() {
         return age;
+    }
+
+    public double getWeight() {
+        return weight;
     }
 
     public Owner getOwner() {

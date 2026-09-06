@@ -44,11 +44,22 @@ public class Student {
         return sum / grades.size();
     }
 
+    // Heeft de student een voldoende voor een bepaald cijfer?
+    // Delegeert aan Grade.isPassing() - Student controleert NIET zelf de waarde
+    public boolean hasPassingGrade(Grade grade) {
+        // EDGE CASE: Null grade
+        if (grade == null) {
+            return false;
+        }
+        // Delegeer aan Grade om te bepalen of het een voldoende is
+        return grade.isPassing();
+    }
+
     // Student telt voldoendes door aan elke Grade te vragen of het een voldoende is
     public int countPassingGrades() {
         int count = 0;
         for (Grade grade : grades) {
-            if (grade.isPassing()) {
+            if (hasPassingGrade(grade)) {
                 count++;
             }
         }

@@ -30,6 +30,11 @@ public class ShoppingCartItem {
         return quantity * product.getPrice();
     }
 
+    // Alias: getTotalPrice voor PDF-stijl
+    public double getTotalPrice() {
+        return calculateLineTotal();
+    }
+
     // Controleert voorraad via Product
     public boolean hasEnoughStock() {
         // EDGE CASE: Geen product gekoppeld

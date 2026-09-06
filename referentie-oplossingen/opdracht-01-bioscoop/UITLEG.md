@@ -14,7 +14,7 @@
 
 | Categorie | Beschrijving |
 |-----------|--------------|
-| **Weet zelf** | seatNumber (stoelnummer), used (of het ticket gebruikt is) |
+| **Weet zelf** | seatNumber (stoelnummer, int), used (of het ticket gebruikt is) |
 | **Kent** | Movie (de film waarvoor dit ticket geldig is) |
 | **Kan vragen beantwoorden** | Wat is het stoelnummer? Is het ticket gebruikt? Wat is de prijs? Voor welke film is dit ticket? |
 | **Kan taken uitvoeren** | Zichzelf markeren als gebruikt (use) |
@@ -33,6 +33,7 @@
 ## Delegatieketens
 
 1. **Cinema vraagt opbrengst**: Cinema → vraagt aan Ticket wat de prijs is → Ticket vraagt aan Movie wat de ticketprijs is
+   - **Let op**: Opbrengst = verkoop van ticket (onafhankelijk van gebruik). Ticket.use() is voor toegang, niet voor betaling.
 2. **Ticket gebruik**: Ticket beheert zelf of het al gebruikt is; niemand anders mag dit aanpassen
 
 ## Klassendiagram
@@ -62,6 +63,7 @@ classDiagram
     class Cinema {
         -String name
         +getName() String
+        +getEarnings(Ticket) double
         +calculateEarnings(Ticket) double
     }
 

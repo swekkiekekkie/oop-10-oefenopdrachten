@@ -42,7 +42,7 @@ java Main
 Elke opdracht-map bevat:
 - **Java-bestanden**: Eén public class per bestand
 - **Main.java**: Demo-programma zonder Scanner (geen user input)
-- **VERANTWOORDELIJKHEID.md**: Documentatie over verantwoordelijkheden en delegatieketens
+- **UITLEG.md**: Documentatie over verantwoordelijkheden en delegatieketens
 
 ## Filosofie
 

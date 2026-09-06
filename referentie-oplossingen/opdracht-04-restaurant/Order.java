@@ -30,9 +30,14 @@ public class Order {
     public double calculateTotal() {
         double total = 0.0;
         for (OrderItem item : items) {
-            total += item.calculateTotal();
+            total += item.getTotalPrice();
         }
         return total;
+    }
+
+    // Alias: getTotalPrice voor PDF-stijl
+    public double getTotalPrice() {
+        return calculateTotal();
     }
 
     public int getItemCount() {
