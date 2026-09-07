@@ -18,7 +18,7 @@
 | **Kent** | - |
 | **Kan vragen beantwoorden** | Wat is de naam? Wat is de minimumleeftijd? Mag deze bezoeker erin? |
 | **Kan taken uitvoeren** | - |
-| **Delegeert aan** | - |
+| **Delegeert aan** | Visitor (parameter) voor leeftijd via getAge() |
 
 ## Ticket
 

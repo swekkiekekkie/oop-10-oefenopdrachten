@@ -50,10 +50,10 @@ classDiagram
     }
 
     class Ticket {
-        -String seatNumber
+        -int seatNumber
         -boolean used
         -Movie movie
-        +getSeatNumber() String
+        +getSeatNumber() int
         +isUsed() boolean
         +getMovie() Movie
         +getPrice() double

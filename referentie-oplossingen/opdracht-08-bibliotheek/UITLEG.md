@@ -36,7 +36,7 @@
 |-----------|--------------|
 | **Weet zelf** | name (naam) |
 | **Kent** | List<Book> (boeken), List<Member> (leden), List<Loan> (uitleningen) |
-| **Kan vragen beantwoorden** | Wat is de naam? Welke boeken zijn beschikbaar? Welke uitleningen zijn te laat? |
+| **Kan vragen beantwoorden** | Wat is de naam? Welke boeken/leden/uitleningen zijn er? Welke boeken zijn beschikbaar? Welke uitleningen zijn te laat? |
 | **Kan taken uitvoeren** | Boek/lid toevoegen, boek uitlenen, boek retourneren |
 | **Delegeert aan** | Loan voor uitlenen/retourneren, Book voor beschikbaarheid, Loan voor te-laat-check |
 
@@ -98,6 +98,9 @@ classDiagram
         -List~Member~ members
         -List~Loan~ loans
         +getName() String
+        +getBooks() List~Book~
+        +getMembers() List~Member~
+        +getLoans() List~Loan~
         +addBook(Book) void
         +addMember(Member) void
         +lendBook(Book, Member, int) Loan
